@@ -12,8 +12,12 @@ limitedConsData$Sub_metering_1 <- as.numeric(as.character(limitedConsData$Sub_me
 limitedConsData$Sub_metering_2 <- as.numeric(as.character(limitedConsData$Sub_metering_2))
 limitedConsData$Sub_metering_3 <- as.numeric(as.character(limitedConsData$Sub_metering_3))
 
-with(limitedConsData, plot(DateTime, Sub_metering_1))
-with(limitedConsData, points(DateTime, Sub_metering_2, col = "blue"))
-with(limitedConsData, points(DateTime, Sub_metering_3, col = "green"))
+
+png(filename="plot3.png", width=480, height=480)
+with(limitedConsData, plot(DateTime, Sub_metering_1, type = "l", xlab = "", ylab = "energy sub metering"))
+with(limitedConsData, points(DateTime, Sub_metering_2, col = "red", type = "l"))
+with(limitedConsData, points(DateTime, Sub_metering_3, col = "blue", type = "l"))
+legend("topright", pch = "_____", col=c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = 1.1)
+dev.off()
 
 }

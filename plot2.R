@@ -11,5 +11,7 @@ plot2 <- function()
   
   limitedConsData <- subset(consData, subset = DateTime < as.POSIXct("2007-2-3") & DateTime >= as.POSIXct("2007-2-1"))
   
+  png(filename="plot2.png", width=480, height=480)
   plot(y=limitedConsData$Global_active_power,x=limitedConsData$DateTime, xlab = "", ylab = "Global Active Power (kilowatts)", type = "l")
+  dev.off()
 }
