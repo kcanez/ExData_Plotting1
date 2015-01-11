@@ -1,7 +1,7 @@
 plot2 <- function()
 {
   options(warn=-1)  #Seeing the warning message got annoying
-  
+   
   consData <- read.csv2("household_power_consumption.txt")
   consData$DateTime <- apply(consData[,c("Date", "Time")], 1, paste, collapse = " ")
   consData <- consData[ , !( names( consData ) %in% c("Date", "Time") ) ]

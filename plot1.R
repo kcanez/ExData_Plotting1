@@ -1,5 +1,5 @@
 plot1 <- function()
-{
+{ 
   options(warn=-1)  #Seeing the warning message got annoying
   
   consData <- read.csv2("household_power_consumption.txt")
